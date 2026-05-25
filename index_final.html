@@ -5248,7 +5248,7 @@
 
       <!-- HERO -->
       <div class="gtf-hero">
-        <h2>🏷️ Teoria Jocurilor — Aplicație Practică în Decizii de Business</h2>
+        <h2>🏷️ Teoria Jocurilor - Optimizarea Deciziilor in Scenarii Reale</h2>
         <p>Două companii își aleg simultan strategiile de piață. Matricea conține <strong style="color:var(--accent4)">profitul suplimentar lunar (mii €)</strong> al primei companii pentru fiecare combinație de strategii. Aplicația aplică algoritmul Maximin/Minimax + Programare Liniară (Simplex) pentru a determina <strong style="color:var(--accent3)">strategia optimă</strong>, <strong style="color:var(--accent3)">cum se împarte bugetul</strong> și <strong style="color:var(--accent3)">profitul garantat</strong>.</p>
       </div>
 
@@ -5360,7 +5360,7 @@
           <div class="gtf-step-header">
             <div class="gtf-step-header-num">2</div>
             <div>
-              <h3 class="gtf-step-title">🔍 Preprocesare — Verificarea Punctului Șa</h3>
+              <h3 class="gtf-step-title">🔍 Preprocesare</h3>
               <p class="gtf-step-subtitle">Calculul α<sub>i</sub> = min(linie), β<sub>j</sub> = max(coloană), apoi comparare v<sub>1</sub> = max(α) cu v<sub>2</sub> = min(β)</p>
             </div>
           </div>
@@ -16368,7 +16368,7 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
       </div>`;
 
       bizHtml += `<div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin:10px 0;font-family:var(--mono);font-size:12px;text-align:center">
-        <strong style="color:var(--accent);font-size:13px">❓ Este v₁ egal cu v₂?</strong>
+        <strong style="color:var(--accent);font-size:13px">Este v₁ egal cu v₂?</strong>
       </div>`;
 
       if (isPure) {
@@ -16383,7 +16383,7 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
       } else {
         const diff = r.v2 - r.v1;
         bizHtml += `<div class="biz-warning">
-          ❌ <strong>NU — nu există Punct Șa.</strong><br>
+          <strong>NU — nu există Punct Șa.</strong><br>
           Diferența v₂ - v₁ = ${gtfFmt(diff, 2)} mii €/lună. Suntem obligați să trecem la <strong>strategii mixte</strong> (combinație probabilistică).
         </div>`;
         bizHtml += `<p style="font-size:12px;color:var(--muted)">Datele merg mai departe la <strong>Ramificare (etapa 3)</strong>, unde sistemul va alege automat metoda de rezolvare în funcție de dimensiunea matricei.</p>`;
@@ -16463,7 +16463,7 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
           }
         }
       } else {
-        mathHtml += `<p style="font-size:11px;color:var(--accent)">✓ <strong>Simplex</strong>: matrice prea mare pentru vizualizare grafică. Rezolvăm prin programare liniară (Charnes-Cooper):</p>`;
+        mathHtml += `<p style="font-size:11px;color:var(--accent)">✓ <strong>Simplex</strong>: matrice prea mare pentru vizualizare grafică. Rezolvăm prin programare liniară:</p>`;
         mathHtml += `<div class="formula" style="background:rgba(108,99,255,.08);font-size:11px">
           max Σ Y<sub>j</sub> &nbsp; s.t. Σ q<sub>ij</sub>·Y<sub>j</sub> ≤ 1 ∀i, Y ≥ 0<br>
           v = 1 / max(Σ Y<sub>j</sub>)
@@ -16531,7 +16531,7 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
         </div>`;
         bizHtml += `<p style="margin-top:12px"><strong>Cum lucrează Simplex:</strong></p>`;
         bizHtml += `<div style="background:var(--bg);border-radius:8px;padding:10px 14px;font-size:11px;line-height:1.7">
-          <p style="margin-bottom:6px"><strong style="color:var(--accent)">1.</strong> Reformulăm problema ca <strong>programare liniară</strong> (Charnes-Cooper).</p>
+          <p style="margin-bottom:6px"><strong style="color:var(--accent)">1.</strong> Reformulăm problema ca <strong>programare liniară</strong>.</p>
           <p style="margin-bottom:6px"><strong style="color:var(--accent)">2.</strong> Pornim de la o soluție de bază (toate Y<sub>j</sub> = 0).</p>
           <p style="margin-bottom:6px"><strong style="color:var(--accent)">3.</strong> La fiecare iterație, introducem o nouă variabilă în bază (cea cu cel mai mare câștig potențial).</p>
           <p><strong style="color:var(--accent)">4.</strong> Convergență: când nu mai există variabile profitabile → optim atins.</p>
@@ -16557,10 +16557,6 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
           </div>`;
         }
         bizHtml += `</div>`;
-
-        bizHtml += `<div class="biz-info" style="font-size:11px;margin-top:10px">
-          💡 <strong>Avantajul Simplex:</strong> e <strong>matematic garantat</strong> să găsească optimul global. Folosit în Excel, Google, optimizare logistică, planificare producție.
-        </div>`;
       }
       bizHtml += `</div>`;
 
@@ -16605,17 +16601,17 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
       mathHtml += `<p>După rezolvare, programul testează automat trei condiții pentru a confirma corectitudinea soluției:</p>`;
 
       mathHtml += `<div class="formula" style="border-color:${c1_ok ? 'rgba(67,233,123,.4)' : 'rgba(255,101,132,.4)'}">
-        <strong>Condiția 1:</strong> Σ x<sub>i</sub><sup>*</sup> = 1 ȘI Σ y<sub>j</sub><sup>*</sup> = 1 ${c1_ok ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'}<br>
+        <strong>Condiția 1:</strong> Σ x<sub>i</sub> = 1 ȘI Σ y<sub>j</sub> = 1 ${c1_ok ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'}<br>
         <span style="font-size:11px">Σ x = ${gtfFmt(sumX, 4)} · Σ y = ${gtfFmt(sumY, 4)}</span>
       </div>`;
 
       mathHtml += `<div class="formula" style="border-color:${c2_ok ? 'rgba(67,233,123,.4)' : 'rgba(255,101,132,.4)'}">
-        <strong>Condiția 2:</strong> x<sub>i</sub><sup>*</sup> ≥ 0 ȘI y<sub>j</sub><sup>*</sup> ≥ 0 ${c2_ok ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'}<br>
+        <strong>Condiția 2:</strong> x<sub>i</sub> ≥ 0 ȘI y<sub>j</sub> ≥ 0 ${c2_ok ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'}<br>
         <span style="font-size:11px">min(x) = ${gtfFmt(Math.min(...r.x0), 4)} · min(y) = ${gtfFmt(Math.min(...r.y0), 4)}</span>
       </div>`;
 
       mathHtml += `<div class="formula" style="border-color:${c3_ok ? 'rgba(67,233,123,.4)' : 'rgba(255,101,132,.4)'}">
-        <strong>Condiția 3:</strong> x<sup>*T</sup> · Q · y<sup>*</sup> = v ${c3_ok ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'}<br>
+        <strong>Condiția 3:</strong> x<sup>o</sup> · Q · y<sup>o</sup> = v ${c3_ok ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'}<br>
         <span style="font-size:11px">= ${gtfFmt(xQy, 4)} ≈ ${gtfFmt(r.v, 4)}</span>
       </div>`;
 
@@ -16632,20 +16628,12 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
         for (let j = 0; j < n; j++) s += r.Q[i][j] * r.y0[j];
         if (s > r.v + 0.01) { okB = false; break; }
       }
-
-      mathHtml += `<p style="font-size:11px;color:var(--muted);margin-top:14px">Verificări suplimentare:</p>`;
-      mathHtml += `<div style="font-family:var(--mono);font-size:11px;background:var(--bg);padding:10px 14px;border-radius:6px;line-height:1.7">
-        <div>Σ x<sub>i</sub><sup>*</sup> q<sub>ij</sub> ≥ v &nbsp; ∀j ${okA ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'} <span style="color:var(--muted)">(A garantează min v)</span></div>
-        <div>Σ q<sub>ij</sub> y<sub>j</sub><sup>*</sup> ≤ v &nbsp; ∀i ${okB ? '<span style="color:var(--accent3)">✓</span>' : '<span style="color:var(--accent2)">✗</span>'} <span style="color:var(--muted)">(B limitează la v)</span></div>
-      </div>`;
-
-      mathHtml += `<p style="font-size:11px;color:var(--muted);margin-top:10px">Toate condițiile teoremei minimax (Von Neumann, 1928) trec — soluția e <strong>matematic optimă</strong>.</p>`;
+      
       mathHtml += `</div>`;
 
       // BUSINESS
       let bizHtml = `<div class="gtf-split-side-title">Cele 3 verificări — explicate</div>`;
       bizHtml += `<div class="gtf-biz-content">`;
-      bizHtml += `<p>Programul nu trimite niciodată rezultate "oarbe". <strong>Toate cele 3 condiții</strong> trebuie să treacă înainte ca planul să fie trimis la etapa finală:</p>`;
 
       // Three big check cards
       const checks = [
@@ -16834,9 +16822,6 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
         });
         html += `</div>`;
 
-        html += `<div style="background:rgba(249,202,36,.06);border-left:3px solid var(--accent4);padding:12px 16px;border-radius:6px;margin-bottom:14px">
-          <strong>⚠ Important:</strong> randomizează ordinea săptămânilor în fiecare ciclu nou — nu repeta același calendar. ${fb} ar putea învăța șablonul și contraataca.
-        </div>`;
       }
 
       // Plot
@@ -16873,17 +16858,6 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
       </div>`;
 
       // Final recommendation
-      html += `<div class="gtf-step-section">
-        <div class="gtf-step-section-title">✅ Recomandare finală</div>
-        <div style="background:linear-gradient(135deg,rgba(67,233,123,.08),rgba(108,99,255,.06));border:1px solid rgba(67,233,123,.3);border-radius:12px;padding:16px 20px">`;
-
-      if (isPure) {
-        html += `<p style="font-size:13px;line-height:1.7;color:var(--text)">Pentru că există o strategie pură optimă, <strong>concentrează 100% din resurse</strong> pe <strong style="color:var(--accent2)">"${gtfEscape(GTF.stratsA[r.saddle.row].name)}"</strong>. Nu diversifica — în acest caz, diversificarea ar reduce profitul garantat de <strong class="value">${gtfFmt(monthly, 2)} mii €/lună</strong>.</p>`;
-      } else {
-        const dom = d.activeA[0];
-        html += `<p style="font-size:13px;line-height:1.7;color:var(--text)">Diversifică investiția. Strategia principală este <strong style="color:var(--accent2)">"${gtfEscape(dom.name)}"</strong> (${gtfPct(dom.p)}% din buget), combinată cu celelalte ${d.activeA.length - 1} ${d.activeA.length - 1 === 1 ? 'strategie activă' : 'strategii active'}. <strong>Nu repeta aceeași campanie în fiecare lună</strong> — randomizarea face strategia greu de anticipat și menține câștigul garantat de <strong class="value">${gtfFmt(monthly, 2)} mii €/lună</strong>.</p>`;
-      }
-      html += `</div></div>`;
 
       document.getElementById('gtfStep5Content').innerHTML = html;
     }
@@ -16965,12 +16939,12 @@ Criteriu MAX: intră în bază dacă Δ_j > 0, optim dacă ∀Δ_j ≤ 0`;
 
       traces.push({
         x: [bestP], y: [bestV], mode: 'markers+text', type: 'scatter',
-        name: '★ Punctul MAXIMIN',
+        name: '★ Punctul optim',
         marker: { size: 18, color: '#f9ca24', symbol: 'star', line: { color: '#fff', width: 2 } },
-        text: ['★ MAXIMIN: p=' + bestP.toFixed(2) + ', v=' + bestV.toFixed(2)],
+        text: ['★ p=' + bestP.toFixed(2) + ', v=' + bestV.toFixed(2)],
         textposition: 'top right',
         textfont: { color: '#f9ca24', size: 12, family: 'JetBrains Mono' },
-        hovertemplate: '<b>★ PUNCT OPTIM MAXIMIN</b><br>p* = %{x:.3f}<br>v* = %{y:.3f} mii €<extra></extra>'
+        hovertemplate: '<b>★ PUNCT OPTIM</b><br>p* = %{x:.3f}<br>v* = %{y:.3f} mii €<extra></extra>'
       });
 
       const layout = {
